@@ -1,0 +1,30 @@
+<html>
+	<style>
+		p {
+			margin-left: 3%;
+			margin-right: 3%;
+			margin-top: 10%;
+			font-size: 100px;
+			color: white;
+		}
+		body {
+			background-color: #3c6478;
+		}
+	</style>
+	<body>
+		<br />
+		<p id="time_since"></p>
+		<script>
+			setInterval(() => {
+				const date1 = new Date("February 7, 2024, 18:30:00");
+				const date2 = Date.now();
+				var time_since = date2 - date1;
+				var hours = Math.floor(time_since / (60 * 60 * 1000));
+				var minutes = Math.floor(time_since / (60 * 1000)) % 60;
+				var seconds = Math.floor(time_since / 1000) % 60;
+				document.getElementById("time_since").innerHTML =
+					hours + " hours " + minutes + " minutes " + seconds + " seconds";
+			});
+		</script>
+	</body>
+</html>
